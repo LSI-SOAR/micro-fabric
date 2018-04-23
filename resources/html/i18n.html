@@ -1,0 +1,166 @@
+<link rel="import" href="../css/themes/ice.html" />
+<link rel="import" href="../components/iron-flex-layout/iron-flex-layout-classes.html" />
+<link rel="import" href="../components/paper-drawer-panel/paper-drawer-panel.html" />
+<link rel="import" href="../components/paper-material/paper-material.html" />
+<link rel="import" href="../components/paper-drawer-panel/paper-drawer-panel.html" />
+<link rel="import" href="../components/paper-header-panel/paper-header-panel.html" />
+<link rel="import" href="../components/paper-toolbar/paper-toolbar.html" />
+<link rel="import" href="../components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../components/paper-button/paper-button.html" />
+<link rel="import" href="../components/iron-icon/iron-icon.html" />
+<link rel="import" href="../components/iron-icons/iron-icons.html" />
+<link rel="import" href="../components/paper-item/paper-item.html" />
+<link rel="import" href="../components/neon-animation/neon-animated-pages.html" />
+<link rel="import" href="../components/neon-animation/neon-animatable.html" />
+<link rel="import" href="../components/neon-animation/neon-animations.html" />
+<link rel="import" href="../components/paper-input/paper-input.html" />
+<link rel="import" href="../components/paper-checkbox/paper-checkbox.html" />
+<link rel="import" href="../components/paper-spinner/paper-spinner-lite.html" />
+<link rel="import" href="../components/paper-tabs/paper-tabs.html" />
+<link rel="import" href="../components/paper-dialog/paper-dialog.html" />
+<link rel="import" href="../components/paper-input/paper-textarea.html" />
+
+<link rel="import" href="i18n-settings.html" />
+<link rel="import" href="i18n-browser.html" />
+<link rel="import" href="i18n-entry.html" />
+<link rel="import" href="i18n-editor.html" />
+
+<dom-module id="i18n-t">
+    <template><content id="content"></content></template>
+    <script>
+        Polymer({
+            is : "i18n-t",
+            properties : {
+                uuid : { type : String },
+                hash : { type : String }, 
+                html : { type : String } 
+            },
+            ready : function() {
+                this.set("uuid", UUID.v1());
+            },
+            attached : function() {
+
+                console.log("TEST:",this.$.content._distributedNodes[0].parentElement.innerHTML);
+
+                this.target = this.$.content._distributedNodes[0].parentElement;
+
+                var text = _.map(this.$.content._distributedNodes, (e) => { return e; });
+
+            
+                if(this.$.content._distributedNodes.length) {
+                    var text = this.$.content._distributedNodes[0].parentElement.innerHTML;
+                    console.log("TEXT:","'"+text+"'");
+
+                    //this.set("html",text);
+                    var hash = i18n.hash(text);
+                    this.set("hash", hash);
+                    text = i18n.translate(text);
+                    this.$.content._distributedNodes[0].parentElement.innerHTML = text;
+                }
+
+                i18n.nodes.set(this.uuid, this);
+            },
+            onLocaleChanged:function(){
+                if(!this.hash)
+                    return
+                var e = i18n.entries.get(this.hash);                   
+                this.target.innerHTML = e.locale[i18n.locale] || e.locale[i18n.config.sourceLanguage];
+            },
+            detached : function() {
+                i18n.nodes.delete(this.uuid);
+            }
+        })
+    </script>
+</dom-module>
+
+
+<dom-module id="i18n-app">
+
+    <style include="i18n-style">
+        :host {display: block;}
+        .content{}
+        .nav {border-right: 1px solid #ccc;overflow-y:auto;box-sizing: border-box;}
+        .nav paper-item{cursor:pointer;box-sizing: border-box;}
+        .main {background-color: #eee;}
+        paper-toolbar {background-color:#606060;}
+        .content {padding: 0 16px;}
+        paper-material {min-height: 200px; margin: 16px auto; padding:20px; background-color: #fff;}
+        .top-logo-holder{height:100%;}
+        .top-toolbar .logo{margin-top:5px;margin-bottom:0px;transition:all 0.2s ease;}
+        .logo{max-height:80%;display:inline-block;margin:15px 0px;}
+        neon-animatable{background-color:transparent;padding:10px 0px;}
+        #pages{background-color:transparent;}
+        .nav .iron-selected.menu,
+        .nav [focused].menu{font-weight:normal;background-color:#EEE;}
+        .nav .menu:focus:before, .nav .paper-item .menu:focus:before{background-color:transparent;}
+        .drawer-top-toolbar .logo{margin-left:auto;margin-right:auto}
+        @media(min-width:501px){
+            .top-toolbar{margin-left:-256px}
+            #drawerPanel::shadow #drawer{top:64px;bottom:0px;height:initial}
+            #drawerPanel::shadow #drawer .nav{padding-top1:106px;}
+            .drawer-top-toolbar{display:none;}
+        }
+        @media (min-width:501px) AND (max-width:600px){
+            #drawerPanel::shadow #drawer{topp:56px;}
+        }
+        ::content .layout.horizontal{@apply(--layout-horizontal)}
+        ::content .layout.vertical{@apply(--layout-vertical)}
+        ::content .flex{@apply(--layout-flex)}
+    }
+    </style>
+
+    <template>
+        <i18n-settings id="settingDialog" config="{{config}}" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop editor-languages="{{editorLanguages}}">
+        </i18n-settings>
+        <paper-drawer-panel id="drawerPanel" responsive-width="500px">
+            <div class="nav" drawer="">
+                <paper-toolbar class="drawer-top-toolbar">
+                    <img class="logo" on-tap="onLogoClick" src="[[logoPath]]" />
+                </paper-toolbar>
+                <i18n-browser list="{{config.entries}}" editor-languages="[[editorLanguages]]" selected-data="{{selectedItemData}}"></i18n-browser>
+            </div>
+            <paper-header-panel class="main" main="" mode="waterfall">
+                <paper-toolbar class="top-toolbar">
+                    <img class="logo" on-tap="onLogoClick" src="[[logoPath]]" />
+                    <div class="flex layout vertical center-justified" id="headerBox">
+                        <!--h2>Editor</h2-->
+                    </div>
+                    <paper-icon-button icon="menu" paper-drawer-toggle=""></paper-icon-button>
+                    <paper-icon-button icon="settings" on-tap="showSettings"></paper-icon-button>
+                </paper-toolbar>
+                <i18n-editor editor-languages="[[editorLanguages]]" data="{{selectedItemData}}"></i18n-editor>
+            </paper-header-panel>
+        </paper-drawer-panel>
+    </template>
+    <script>
+        Polymer({
+            is: 'i18n-app',
+            properties:{
+                config:{
+                    type: Object
+                },
+                logoPath:{
+                    type: String,
+                    value: "../logo.png"
+                }
+            },
+            ready: function () {
+                var self = this;
+                self.app = this;
+                if(i18n.logoPath){
+                    self.set("logoPath", i18n.logoPath);
+                }
+                self.set("config", {
+                    languages: i18n.languages,
+                    entries: _.map(i18n.entries, function(item, hash){item.hash = hash; return item;}),
+                    locales: "*",
+                    editorLanguages: "hi ru pu",
+                    isAdmin: true
+                })
+            },
+            showSettings: function(){
+                this.$.settingDialog.open();
+            }
+        });
+    </script>
+</dom-module>
