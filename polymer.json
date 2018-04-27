@@ -1,0 +1,22 @@
+{
+	"entrypoint": "resources/html/i18n-editor.html",
+	"moduleResolution": "node",
+	"sources":[
+		"resources/logo.png"
+	],
+	"build": [{
+		"name": "compiled",
+		"bundle": {
+			"excludes": ["/path/to/more/stuff.html"],
+			"stripComments": true,
+			"inlineCss": false,
+			"inlineJs": false,
+			"sourcemaps": true
+		},
+		"js": {"minify": false},
+		"css": {"minify": true},
+		"html": {"minify": false},
+		"______isComponentRequest": true,
+		"____componentDir": "./components/"
+	}]
+}

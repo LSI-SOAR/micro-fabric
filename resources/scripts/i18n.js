@@ -4,13 +4,17 @@ var UUID = require('uuid');
 var i18n = nw.Window.get().data.i18n;
 var _T = i18n.getT();
 
-
 //i18n.nodes.clear();
+i18n.nodes.forEach(function(node, uuid, map) {
+	if(node.window == window){
+		i18n.nodes.delete(uuid);
+	}
+});
 new (class i18n_global_updater_ {
 	constructor() {
 		this.uuid = UUID.v1();
-		//i18n.nodes.set(this.uuid, this);
-		i18n.on("fabric-i18n-locale-changed", this.onLocaleChanged.bind(this))
+		this.window = window;
+		i18n.nodes.set(this.uuid, this);
 	}
 
 	onLocaleChanged() {
