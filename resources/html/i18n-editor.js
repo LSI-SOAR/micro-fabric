@@ -121,7 +121,7 @@ Polymer({
 		var time = year + '-' + month + '-' + date + ' ' + hour + ':' + min + ':' + sec;
 		return time;
 	},
-	_data: function(data, locale){return data[locale]},
+	_data: function(data, locale){return (data.locale && data.locale[locale]) || ""},
 	_maxRows: function(multiline){return multiline ? 2000 : 1;},
 	_rows: function(multiline){return multiline ? 3 : 1;},
 	checkEnter: function(e){
