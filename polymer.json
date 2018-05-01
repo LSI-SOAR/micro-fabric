@@ -1,8 +1,9 @@
 {
-	"entrypoint": "resources/html/i18n-editor.html",
+	"entrypoint": "modules/i18n/i18n-editor.html",
 	"moduleResolution": "node",
 	"sources":[
-		"resources/logo.png"
+		"modules/**/*.png",
+		"modules/**/*.jpg"
 	],
 	"build": [{
 		"name": "compiled",

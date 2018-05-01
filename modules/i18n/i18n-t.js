@@ -1,6 +1,6 @@
-import '../../node_modules/@polymer/polymer/polymer-legacy.js';
-import '../../node_modules/@polymer/paper-styles/default-theme.js';
-import { Polymer } from '../../node_modules/@polymer/polymer/lib/legacy/polymer-fn.js';
+import '@polymer/polymer/polymer-legacy.js';
+import '@polymer/paper-styles/default-theme.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
 
 const $_documentContainer = document.createElement('div');
 $_documentContainer.setAttribute('style', 'display: none;');

@@ -1,4 +1,4 @@
-import "../css/themes/ice.js";
+import "../../resources/themes/ice.js";
 
 import "@polymer/polymer/polymer-legacy.js";
 import '@polymer/paper-styles/default-theme.js';
