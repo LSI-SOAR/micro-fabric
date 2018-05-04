@@ -1,4 +1,7 @@
 import "../../resources/themes/ice.js";
+import "../../resources/fonts/icn-icons.js";
+import "../../resources/fonts/fa-icons.js";
+import "../../resources/components/fabric-toolbar.js";
 
 import "@polymer/polymer/polymer-legacy.js";
 import '@polymer/paper-styles/default-theme.js';
@@ -41,12 +44,11 @@ $_documentContainer.innerHTML = `
             :host {display: block;}
             .nav {overflow-y:auto;box-sizing: border-box;}
             .nav paper-item{cursor:pointer;box-sizing: border-box;}
-            .main {background-color: #eee;}
             paper-toolbar {background-color:#606060;}
             .content {padding: 0 16px;}
             paper-material {min-height: 200px; margin: 16px auto; padding:20px; background-color: #fff;}
             .top-logo-holder{height:100%;}
-            .top-toolbar .logo{margin-top:5px;margin-bottom:0px;transition:all 0.2s ease;}
+            .top-toolbar .logo{margin-bottom:0px;transition:all 0.2s ease;}
             .logo{max-height:80%;display:inline-block;margin:15px 0px;}
             neon-animatable{background-color:transparent;padding:10px 0px;}
             #pages{background-color:transparent;}
@@ -57,7 +59,7 @@ $_documentContainer.innerHTML = `
             #drawer{top:0px;bottom:0px;}
             @media(min-width:501px){
                 .top-toolbar{margin-left:-256px}
-                #drawer{top:64px;height:initial}
+                #drawer{top:26px;height:initial}
                 .drawer-top-toolbar{display:none;}
                 .nav {border-right: 1px solid #ccc;}
             }
@@ -79,22 +81,22 @@ $_documentContainer.innerHTML = `
         <i18n-settings id="settingDialog" config="{{config}}" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop editor-languages="{{editorLanguages}}">
         </i18n-settings>
         <app-drawer-layout id="drawerPanel" responsive-width="500px">
-            <app-drawer slot="drawer" id="drawer">
+            <app-drawer slot="drawer" id="drawer" opened="{{opened}}">
                 <!--app-toolbar class="drawer-top-toolbar">
                     <img class="logo" on-tap="onLogoClick" src="[[logoPath]]" />
                 </app-toolbar-->
                 <i18n-browser class="nav" list="{{config.entries}}" editor-languages="[[editorLanguages]]" selected-data="{{selectedItemData}}"></i18n-browser>
             </app-drawer>
             <app-header-layout>
-                <app-header class="top-toolbar main" effects="waterfall" main="" slot="header">
-                    <app-toolbar >
+                <app-header class="top-toolbar" effects="waterfall" main="" slot="header">
+                    <fabric-toolbar drawer-opened$="[[opened]]"
+                        on-toggle-drawer="toggleDrawer">
                         <img class="logo" on-tap="onLogoClick" src="[[logoPath]]" />
                         <div class="flex layout vertical center-justified" id="headerBox">
                             <!--h2>Editor</h2-->
                         </div>
-                        <paper-icon-button class="toggle-btn" icon="menu" drawer-toggle></paper-icon-button>
-                        <paper-icon-button icon="settings" on-tap="showSettings"></paper-icon-button>
-                    </app-toolbar>
+                        <paper-icon-button slot="end" icon="settings" on-tap="showSettings"></paper-icon-button>
+                    </fabric-toolbar>
                 </app-header>
 
                 <i18n-editor editor-languages="[[editorLanguages]]" data="{{selectedItemData}}"></i18n-editor>

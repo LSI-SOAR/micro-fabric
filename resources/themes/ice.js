@@ -18,8 +18,9 @@ $_documentContainer.innerHTML = `
 @import url("https://fonts.googleapis.com/css?family=Oxygen:700|Open+Sans");
 html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 16px; }
 
-html, body { margin: 0px; padding: 0px; min-height: 100%; color: #2d2d2d; background-color: #ffffff; font-family: 'Ubuntu', sans-serif; font-weight: 400; }
-
+html, body { margin: 0px; padding: 0px; min-height: 100%; color: #2d2d2d; background-color:rgba(255,255,255,0.01); font-family: 'Ubuntu', sans-serif; font-weight: 400; }
+body>*{background-color:#FFFFFF}
+body{border-radius:10px;border:1px solid #DDD}
 section { padding: 40px 0px; }
 section[hero] { background-color: #f3f3f3; }
 
@@ -41,7 +42,55 @@ a, a:active, a:visited, a:focus { color: #777777; text-decoration: none; }
 
 a:hover { color: #777777; text-decoration: underline; }
 
-:root { --default-primary-color: #446e9b; --dark-primary-color: #e7e7e7; --light-primary-color: #c5cae9; --text-primary-color: #ffffff; --accent-color: #ff4081; --primary-background-color: #ffffff; --primary-text-color: #2d2d2d; --secondary-text-color: #777777; --disabled-text-color: #313238; --divider-color: #e0e0e0; --paper-checkbox-checked-color: #446e9b; --paper-checkbox-checked-ink-color: #446e9b; --paper-checkbox-unchecked-color: #777777; --paper-checkbox-unchecked-ink-color: #777777; --paper-checkbox-label-color: #2d2d2d; --paper-fab-background: #446e9b; --paper-fab-disabled-background: #afb1b9; --paper-fab-disabled-text: #313238; --paper-icon-button-disabled-text: #afb1b9; --paper-input-container-color: #7a7a7a; --paper-input-container-focus-color: #446e9b; --paper-input-container-invalid-color: #ff6e40; --paper-input-container-input-color: #7a7a7a; --paper-menu-background-color: #f3f3f3; --paper-menu-color: #2d2d2d; --paper-menu-disabled-color: #afb1b9; --paper-progress-active-color: #446e9b; --paper-progress-secondary-color: #80cbc4; --paper-radio-button-checked-color: #446e9b; --paper-radio-button-checked-ink-color: white; --paper-radio-button-unchecked-color: #2d2d2d; --paper-radio-button-unchecked-ink-color: #2d2d2d; --paper-radio-button-label-color: #2d2d2d; --paper-slider-knob-color: #446e9b; --paper-slider-active-color: #446e9b; --paper-slider-pin-color: #446e9b; --paper-spinner-layer-1-color: #446e9b; --paper-spinner-layer-2-color: #446e9b; --paper-spinner-layer-3-color: #446e9b; --paper-spinner-layer-4-color: #446e9b; --paper-tabs-selection-bar-color:#231f20; --paper-tab-ink: #80cbc4; --paper-toggle-button-checked-bar-color: #446e9b; --paper-toggle-button-checked-button-color: #446e9b; --paper-toggle-button-checked-ink-color: #446e9b; --paper-toggle-button-unchecked-bar-color: #777777; --paper-toggle-button-unchecked-button-color: white; --paper-toggle-button-unchecked-ink-color: white; --paper-toolbar-background: #e7e7e7; --paper-toolbar-color: #FFF; }
+:root {
+	--default-primary-color: #446e9b; --dark-primary-color: #e7e7e7; --light-primary-color: #c5cae9;
+	--text-primary-color: #ffffff; --accent-color: #ff4081; --primary-background-color: #ffffff;
+	--primary-text-color: #2d2d2d; --secondary-text-color: #777777; --disabled-text-color: #313238;
+	--divider-color: #e0e0e0; --paper-checkbox-checked-color: #446e9b;
+	--paper-checkbox-checked-ink-color: #446e9b; --paper-checkbox-unchecked-color: #777777;
+	--paper-checkbox-unchecked-ink-color: #777777; --paper-checkbox-label-color: #2d2d2d;
+	--paper-fab-background: #446e9b; --paper-fab-disabled-background: #afb1b9;
+	--paper-fab-disabled-text: #313238; --paper-icon-button-disabled-text: #afb1b9;
+	--paper-input-container-color: #7a7a7a; --paper-input-container-focus-color: #446e9b;
+	--paper-input-container-invalid-color: #ff6e40; --paper-input-container-input-color: #7a7a7a;
+	--paper-menu-background-color: #f3f3f3; --paper-menu-color: #2d2d2d; --paper-menu-disabled-color: #afb1b9;
+	--paper-progress-active-color: #446e9b; --paper-progress-secondary-color: #80cbc4;
+	--paper-radio-button-checked-color: #446e9b; --paper-radio-button-checked-ink-color: white;
+	--paper-radio-button-unchecked-color: #2d2d2d; --paper-radio-button-unchecked-ink-color: #2d2d2d;
+	--paper-radio-button-label-color: #2d2d2d; --paper-slider-knob-color: #446e9b;
+	--paper-slider-active-color: #446e9b; --paper-slider-pin-color: #446e9b;
+	--paper-spinner-layer-1-color: #446e9b; --paper-spinner-layer-2-color: #446e9b;
+	--paper-spinner-layer-3-color: #446e9b; --paper-spinner-layer-4-color: #446e9b;
+	--paper-tabs-selection-bar-color:#231f20; --paper-tab-ink: #80cbc4;
+	--paper-toggle-button-checked-bar-color: #446e9b; --paper-toggle-button-checked-button-color: #446e9b;
+	--paper-toggle-button-checked-ink-color: #446e9b; --paper-toggle-button-unchecked-bar-color: #777777;
+	--paper-toggle-button-unchecked-button-color: white; --paper-toggle-button-unchecked-ink-color: white;
+	--paper-toolbar-background: #e7e7e7; --paper-toolbar-color: #FFF;
+	--paper-icon-button:{
+		width:20px;
+		height:20px;
+		padding:2px;
+	}
+	--fabric-toolbar:{
+		height:25px;
+		padding: 0 5px;
+		-webkit-app-region:drag;
+		cursor:move;
+		user-select:none;
+		border-top-right-radius: 10px;
+    	border-top-left-radius: 10px;
+    	background-color: #eee;
+	}
+	--app-header{
+		border-top-right-radius: 10px;
+    	border-top-left-radius: 10px;
+	}
+}
+
+app-header{
+	top:1px;
+}
+app-drawer{left:1px;bottom:1px !important;border-bottom-left-radius: 10px;overflow:hidden}
 
 paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus { color: #777777; }
 
@@ -74,6 +123,12 @@ paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon
 paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] { color: #ff6e40; }
 paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover { background-color: #fff1ec; background-color: rgba(255, 110, 64, 0.2); border-radius: 50%; }
 
+
+paper-icon-button{
+	--iron-icon:{
+		display:block
+	}
+}
 paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox { border-color: #fff !important; }
 
 paper-dialog { color: #2d2d2d; background-color: #ffffff; font-family: 'Oxygen', sans-serif; font-weight: 400; }
