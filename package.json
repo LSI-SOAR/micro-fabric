@@ -1,6 +1,6 @@
 {
   "name": "micro-fabric",
-  "description": "",
+  "description": "µFabric Application Framework",
   "version": "0.0.1",
   "private": false,
   "main": "micro-fabric.js",
@@ -29,10 +29,36 @@
     "@polymer/polymer": "^3.0.0-pre.12",
     "polymer-build": "^3.0.0-pre.14",
     "gulp": "*",
-    "fs-extra": "*"
+    "fs-extra": "*",
+    "ws": "*",
+    "socket.io": "*"
   },
   "engines": {
     "node": "*",
     "npm": "*"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aspectron/micro-fabric"
+  },
+  "main": "micro-fabric",
+  "files": [
+    "micro-fabric.js",
+    "polymer.json",
+    "bin",
+    "lib",
+    "modules",
+    "resources",
+    "test",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "prepublish": "npm prune"
+  },
+
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/aspectron/micro-fabric"
+
+
 }
