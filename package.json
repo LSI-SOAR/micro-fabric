@@ -3,7 +3,7 @@
   "description": "µFabric Application Framework",
   "version": "0.0.1",
   "private": false,
-  "main": "micro-fabric.js",
+  "main": "micro-fabric",
   "dependencies": {
     "colors": "^1.1.2",
     "nats": "^0.7.24",
@@ -41,7 +41,6 @@
     "type": "git",
     "url": "git://github.com/aspectron/micro-fabric"
   },
-  "main": "micro-fabric",
   "files": [
     "micro-fabric.js",
     "polymer.json",
@@ -56,9 +55,6 @@
   "scripts": {
     "prepublish": "npm prune"
   },
-
   "license": "Apache 2.0",
   "homepage": "https://github.com/aspectron/micro-fabric"
-
-
 }
