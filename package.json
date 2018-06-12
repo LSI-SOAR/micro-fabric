@@ -1,59 +1,18 @@
 {
-  "_from": "git+ssh://git@github.com/aspectron/micro-fabric.git",
-  "_id": "micro-fabric@0.0.1",
-  "_inBundle": false,
-  "_location": "/micro-fabric",
-  "_phantomChildren": {
-    "nuid": "0.6.14"
-  },
-  "_requested": {
-    "type": "git",
-    "raw": "micro-fabric@git+ssh://git@github.com/aspectron/micro-fabric.git",
-    "name": "micro-fabric",
-    "escapedName": "micro-fabric",
-    "rawSpec": "git+ssh://git@github.com/aspectron/micro-fabric.git",
-    "saveSpec": "git+ssh://git@github.com/aspectron/micro-fabric.git",
-    "fetchSpec": "ssh://git@github.com/aspectron/micro-fabric.git",
-    "gitCommittish": null
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "git+ssh://git@github.com/aspectron/micro-fabric.git#b15fec4bbace333f725891e39aaa5f3e32cc3a7e",
-  "_spec": "micro-fabric@git+ssh://git@github.com/aspectron/micro-fabric.git",
-  "_where": "C:\\dev\\lsi\\soar-dsn-player",
+  "name": "micro-fabric",
   "bugs": {
     "url": "https://github.com/aspectron/micro-fabric/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
-    "@polymer/app-layout": "^3.0.0-pre.12",
-    "@polymer/iron-icons": "^3.0.0-pre.12",
-    "@polymer/neon-animation": "^3.0.0-pre.12",
-    "@polymer/paper-button": "^3.0.0-pre.12",
-    "@polymer/paper-checkbox": "^3.0.0-pre.12",
-    "@polymer/paper-dialog": "^3.0.0-pre.12",
-    "@polymer/paper-drawer-panel": "^3.0.0-pre.12",
-    "@polymer/paper-icon-button": "^3.0.0-pre.12",
-    "@polymer/paper-input": "^3.0.0-pre.12",
-    "@polymer/paper-item": "^3.0.0-pre.12",
-    "@polymer/paper-listbox": "^3.0.0-pre.12",
-    "@polymer/paper-material": "^3.0.0-pre.12",
-    "@polymer/paper-menu-button": "^3.0.0-pre.12",
-    "@polymer/paper-tabs": "^3.0.0-pre.12",
-    "@polymer/polymer": "^3.0.0-pre.12",
     "colors": "^1.1.2",
     "fs-extra": "*",
-    "gulp": "*",
     "nats": "^0.7.24",
     "node-nats-streaming": "0.0.26",
     "nuid": "^0.6.14",
-    "polymer-build": "^3.0.0-pre.14",
     "request": "^2.83.0",
     "socket.io": "*",
     "underscore": "^1.8.3",
-    "web-animations-js": "^2.3.1",
     "ws": "*"
   },
   "deprecated": false,
@@ -64,19 +23,15 @@
   },
   "files": [
     "micro-fabric.js",
-    "polymer.json",
     "bin",
     "lib",
-    "modules",
-    "resources",
     "test",
     "LICENSE",
     "README.md"
   ],
   "homepage": "https://github.com/aspectron/micro-fabric",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "main": "micro-fabric",
-  "name": "micro-fabric",
   "private": false,
   "repository": {
     "type": "git",
