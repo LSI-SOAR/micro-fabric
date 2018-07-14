@@ -1,5 +1,10 @@
 {
   "name": "micro-fabric",
+  "author": {
+    "name" : "ASPECTRON Inc.",
+    "email" : "info@aspectron.com",
+    "url" : "http://aspectron.com#micro-fabric"
+  },
   "bugs": {
     "url": "https://github.com/aspectron/micro-fabric/issues"
   },
