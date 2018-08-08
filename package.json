@@ -28,6 +28,7 @@
   },
   "files": [
     "micro-fabric.js",
+    "install.js",
     "bin",
     "lib",
     "test",
