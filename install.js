@@ -24,7 +24,7 @@ switch(os.platform()) {
 }
 
 if(PLATFORM == "linux" || PLATFORM == "darwin"){
-	var mode = 0755;
+	var mode = '755';
 	fs.chmodSync(path.join(BIN, PLATFORM, NATS), mode);
 	fs.chmodSync(path.join(BIN, PLATFORM, STAN), mode);
 }
