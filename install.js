@@ -17,7 +17,7 @@ switch(os.platform()) {
 		STAN = 'stan/nats-streaming-server'
 	} break;
 	case 'linux' : {
-		PLATFORM = 'linux'
+		PLATFORM = 'linux-amd64'
 		NATS = 'nats/gnatsd'
 		STAN = 'stan/nats-streaming-server'
 	} break;
