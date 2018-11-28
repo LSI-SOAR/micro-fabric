@@ -23,7 +23,7 @@ switch(os.platform()) {
 	} break;
 }
 
-if(PLATFORM == "linux" || PLATFORM == "darwin"){
+if(PLATFORM == "linux-amd64" || PLATFORM == "darwin"){
 	var mode = '755';
 	fs.chmodSync(path.join(BIN, PLATFORM, NATS), mode);
 	fs.chmodSync(path.join(BIN, PLATFORM, STAN), mode);
