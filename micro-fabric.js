@@ -4,7 +4,16 @@ const Module = require('./lib/module');
 const Application = require('./lib/application');
 const Network = require('./lib/network');
 
-global.dpc = (t,fn) => { if(!fn) setTimeout(t,0); else setTimeout(fn,t); }
+global.dpc = (t,fn)=>{
+	if(typeof(t) == 'function'){
+		if(typeof(fn) == 'number')
+			setTimeout(t, fn);
+		else
+			setImmediate(t);
+	}else{
+		setTimeout(fn,t);
+	}
+}
 
 module.exports = {
     Module, 
