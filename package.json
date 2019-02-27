@@ -1,5 +1,6 @@
 {
   "name": "micro-fabric",
+  "version": "0.0.22",
   "author": {
     "name" : "ASPECTRON Inc.",
     "email" : "info@aspectron.com",
@@ -46,6 +47,5 @@
   "scripts": {
     "postinstall": "node install.js",
     "prepublish": "npm prune"
-  },
-  "version": "0.0.17"
+  }  
 }
