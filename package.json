@@ -47,5 +47,5 @@
     "postinstall": "node install.js",
     "prepublish": "npm prune"
   },
-  "version": "0.0.18"
+  "version": "0.0.19"
 }
