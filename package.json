@@ -1,10 +1,10 @@
 {
   "name": "micro-fabric",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "author": {
-    "name" : "ASPECTRON Inc.",
-    "email" : "info@aspectron.com",
-    "url" : "http://aspectron.com#micro-fabric"
+    "name": "ASPECTRON Inc.",
+    "email": "info@aspectron.com",
+    "url": "http://aspectron.com#micro-fabric"
   },
   "bugs": {
     "url": "https://github.com/aspectron/micro-fabric/issues"
@@ -47,5 +47,5 @@
   "scripts": {
     "postinstall": "node install.js",
     "prepublish": "npm prune"
-  }  
+  }
 }
