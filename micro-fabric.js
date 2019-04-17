@@ -6,6 +6,7 @@ const Config = require('./lib/config');
 const Network = require('./lib/network');
 const PopupProxy = require('./lib/popup-proxy');
 const Popup = require('./lib/popup');
+const Events = require('./lib/events');
 
 global.dpc = (t,fn)=>{
 	if(typeof(t) == 'function'){
@@ -25,5 +26,6 @@ module.exports = {
     Config,
     utils,
     PopupProxy,
-    Popup
+    Popup,
+    Events
 }
