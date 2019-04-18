@@ -1,1 +1,0 @@
-./nats-streaming-server -cid fabric
