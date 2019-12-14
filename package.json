@@ -1,6 +1,6 @@
 {
   "name": "micro-fabric",
-  "version": "0.3.8",
+  "version": "0.3.10",
   "author": {
     "name": "ASPECTRON Inc.",
     "email": "info@aspectron.com",
@@ -20,7 +20,8 @@
     "socket.io": "*",
     "underscore": "*",
     "ws": "*",
-    "socket.io-client": "*"
+    "socket.io-client": "*",
+    "ansi-regex" : "*"
   },
   "deprecated": false,
   "description": "µFabric Application Framework",
