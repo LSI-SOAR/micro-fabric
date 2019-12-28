@@ -21,7 +21,7 @@
     "underscore": "*",
     "ws": "*",
     "socket.io-client": "*",
-    "ansi-regex" : "*"
+    "ansi-regex": "*"
   },
   "deprecated": false,
   "description": "µFabric Application Framework",
