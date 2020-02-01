@@ -1,6 +1,6 @@
 {
   "name": "micro-fabric",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "author": {
     "name": "ASPECTRON Inc.",
     "email": "info@aspectron.com",
@@ -14,7 +14,6 @@
     "ansi-regex": "*",
     "bs58": "*",
     "colors": "*",
-    "command-line-args": "*",
     "fs-extra": "*",
     "nats": "*",
     "node-nats-streaming": "*",
