@@ -1,6 +1,6 @@
 {
   "name": "micro-fabric",
-  "version": "0.4.13",
+  "version": "0.4.15",
   "author": {
     "name": "ASPECTRON Inc.",
     "email": "info@aspectron.com",
@@ -15,12 +15,12 @@
     "bs58": "*",
     "colors": "*",
     "fs-extra": "*",
-    "nats": "*",
+    "nats": "1.4.12",
     "node-nats-streaming": "*",
-    "nuid": "*",
+    "nuid": "1.1.4",
     "request": "*",
-    "socket.io": "*",
-    "socket.io-client": "*",
+    "socket.io": "2.2.0",
+    "socket.io-client": "2.3.0",
     "underscore": "*",
     "ws": "*"
   },
