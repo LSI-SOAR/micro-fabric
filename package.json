@@ -1,6 +1,6 @@
 {
   "name": "micro-fabric",
-  "version": "0.4.15",
+  "version": "0.4.18",
   "author": {
     "name": "ASPECTRON Inc.",
     "email": "info@aspectron.com",
@@ -11,18 +11,18 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "ansi-regex": "*",
-    "bs58": "*",
-    "colors": "*",
-    "fs-extra": "*",
+    "ansi-regex": "5.0.0",
+    "bs58": "4.0.1",
+    "colors": "1.4.0",
+    "fs-extra": "8.1.0",
     "nats": "1.4.12",
-    "node-nats-streaming": "*",
+    "node-nats-streaming": "0.3.2",
     "nuid": "1.1.4",
-    "request": "*",
+    "request": "2.88.2",
     "socket.io": "2.2.0",
     "socket.io-client": "2.3.0",
-    "underscore": "*",
-    "ws": "*"
+    "underscore": "1.13.1",
+    "ws": "6.1.0"
   },
   "deprecated": false,
   "description": "µFabric Application Framework",
